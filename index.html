@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unser Jahrestags-Wochenende in Berlin</title>
+  <meta name="description" content="Ein kuratierter One-Pager mit Routen, Venues, Maps und Ideen für ein Jahrestags-Wochenende in Berlin." />
+  <style>
+    :root {
+      --bg:#0b0810;
+      --bg2:#17101d;
+      --text:#fff8f0;
+      --soft:#d6c8dc;
+      --muted:#aa9cb4;
+      --line:rgba(255,255,255,.14);
+      --card:rgba(255,255,255,.075);
+      --card2:rgba(255,255,255,.115);
+      --rose:#ff8ebc;
+      --gold:#f7d078;
+      --mint:#8cebd6;
+      --violet:#a78bfa;
+      --ink:#160910;
+      --shadow:0 30px 80px rgba(0,0,0,.36);
+      --max:1220px;
+      --radius:30px;
+      --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(circle at 18% 4%, rgba(255,142,188,.28), transparent 28rem),
+        radial-gradient(circle at 78% 12%, rgba(140,235,214,.18), transparent 26rem),
+        radial-gradient(circle at 52% 92%, rgba(247,208,120,.15), transparent 36rem),
+        linear-gradient(145deg, #07050a 0%, #17101d 46%, #0b0810 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size:54px 54px;
+      mask-image:linear-gradient(to bottom, black, transparent 82%);
+      z-index:-2;
+    }
+
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .wrap { width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+    .glass {
+      background:linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .nav {
+      position:sticky;
+      top:0;
+      z-index:80;
+      background:rgba(11,8,16,.72);
+      border-bottom:1px solid rgba(255,255,255,.11);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .nav-inner {
+      width:min(var(--max), calc(100% - 28px));
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 0;
+    }
+    .brand {
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-weight:900;
+      letter-spacing:-.03em;
+      white-space:nowrap;
+    }
+    .brand-icon {
+      width:38px; height:38px;
+      border-radius:15px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--rose), var(--gold));
+      color:#220814;
+      box-shadow:0 14px 34px rgba(255,142,188,.26);
+    }
+    .links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:6px; }
+    .links a {
+      color:var(--soft);
+      padding:9px 11px;
+      border-radius:999px;
+      font-size:14px;
+      border:1px solid transparent;
+    }
+    .links a:hover { color:#fff; background:rgba(255,255,255,.075); border-color:rgba(255,255,255,.16); }
+
+    .hero {
+      position:relative;
+      min-height:92vh;
+      display:grid;
+      align-items:center;
+      padding:70px 0 58px;
+    }
+    .hero-grid {
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:38px;
+      align-items:center;
+    }
+    .eyebrow {
+      display:inline-flex;
+      gap:9px;
+      align-items:center;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:999px;
+      color:#ffe7f1;
+      background:rgba(255,255,255,.075);
+      margin-bottom:20px;
+      font-weight:760;
+    }
+    .spark {
+      width:9px; height:9px; border-radius:50%;
+      background:var(--mint);
+      box-shadow:0 0 0 rgba(140,235,214,.6);
+      animation:pulse 1.9s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow:0 0 0 14px rgba(140,235,214,0); }
+      100% { box-shadow:0 0 0 0 rgba(140,235,214,0); }
+    }
+    h1 {
+      margin:0 0 22px;
+      font-size:clamp(48px, 8.4vw, 108px);
+      line-height:.91;
+      letter-spacing:-.08em;
+    }
+    .gradient {
+      color:transparent;
+      background:linear-gradient(112deg, #fff8f0 0%, #ffd5e5 35%, #f7d078 66%, #8cebd6 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+    }
+    .hero p {
+      margin:0;
+      max-width:720px;
+      color:#eadfec;
+      font-size:clamp(18px, 2.15vw, 24px);
+      line-height:1.48;
+    }
+    .hero-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:14px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      color:white;
+      background:rgba(255,255,255,.085);
+      font-weight:850;
+      cursor:pointer;
+      transition:.24s ease;
+    }
+    .btn.primary {
+      border:none;
+      color:#230712;
+      background:linear-gradient(135deg, var(--rose), var(--gold));
+      box-shadow:0 20px 44px rgba(255,142,188,.27);
+    }
+    .btn:hover { transform:translateY(-2px); border-color:rgba(255,255,255,.32); }
+
+    .moodboard {
+      min-height:650px;
+      border-radius:46px;
+      overflow:hidden;
+      position:relative;
+      transform:rotate(1.1deg);
+      isolation:isolate;
+    }
+    .moodboard::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.85), transparent 56%),
+        radial-gradient(circle at 18% 18%, rgba(247,208,120,.25), transparent 18rem);
+      z-index:2;
+    }
+    .mood-grid {
+      position:absolute;
+      inset:0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:1.1fr .9fr;
+    }
+    .mood {
+      background-size:cover;
+      background-position:center;
+      border:1px solid rgba(255,255,255,.10);
+      filter:saturate(1.08) contrast(1.02);
+    }
+    .mood.big {
+      grid-column:1 / -1;
+      background-image:url('https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1600&q=84');
+    }
+    .mood.one { background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=84'); }
+    .mood.two { background-image:url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=84'); }
+    .note {
+      position:absolute;
+      left:22px; right:22px; bottom:22px;
+      z-index:3;
+      border-radius:28px;
+      padding:20px;
+      background:rgba(18,12,24,.72);
+      border:1px solid rgba(255,255,255,.17);
+      backdrop-filter:blur(15px);
+    }
+    .note strong { display:block; font-size:24px; letter-spacing:-.03em; margin-bottom:8px; }
+    .note span { display:block; color:#dfd2e4; line-height:1.48; }
+    .chip {
+      position:absolute;
+      z-index:4;
+      padding:10px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.2);
+      backdrop-filter:blur(12px);
+      font-weight:900;
+      box-shadow:0 18px 38px rgba(0,0,0,.25);
+      animation:float 5s ease-in-out infinite;
+    }
+    .chip.a { top:25px; left:24px; }
+    .chip.b { top:92px; right:24px; animation-delay:.8s; }
+    .chip.c { bottom:190px; left:42px; animation-delay:1.35s; }
+    @keyframes float { 50% { transform:translateY(-10px); } }
+
+    section { padding:78px 0; }
+    .section-head {
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:28px;
+    }
+    h2 {
+      margin:0;
+      font-size:clamp(36px, 5.2vw, 66px);
+      line-height:.98;
+      letter-spacing:-.06em;
+    }
+    .section-head p, .lead {
+      color:var(--soft);
+      line-height:1.56;
+      margin:10px 0 0;
+      font-size:17px;
+      max-width:710px;
+    }
+
+    .logic {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:24px;
+    }
+    .logic-card {
+      border-radius:26px;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.13);
+      background:linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.04));
+    }
+    .logic-card .big {
+      font-size:27px;
+      font-weight:950;
+      letter-spacing:-.04em;
+      margin-bottom:7px;
+    }
+    .logic-card span { color:var(--soft); line-height:1.48; display:block; }
+
+    .routes {
+      display:grid;
+      grid-template-columns:repeat(5, minmax(255px,1fr));
+      gap:18px;
+      overflow-x:auto;
+      padding-bottom:10px;
+      scroll-snap-type:x mandatory;
+    }
+    .route {
+      min-width:255px;
+      scroll-snap-align:start;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.13);
+      background:linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.04));
+    }
+    .route-image {
+      height:185px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+    .route-no {
+      position:absolute;
+      left:15px;
+      bottom:13px;
+      font-size:38px;
+      font-weight:950;
+      letter-spacing:-.08em;
+      color:#fff;
+      opacity:.9;
+    }
+    .route-body { padding:20px; }
+    .tagline {
+      display:inline-flex;
+      width:max-content;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(247,208,120,.18);
+      border:1px solid rgba(247,208,120,.35);
+      color:#ffe4a9;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      margin-bottom:12px;
+    }
+    .route h3 { margin:0 0 10px; font-size:24px; letter-spacing:-.04em; }
+    .route p { margin:0 0 16px; color:#d8cadf; line-height:1.46; }
+    .steps { display:grid; gap:10px; }
+    .step {
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:10px;
+      padding-top:10px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    .step time { color:#ffd98b; font-weight:950; font-size:13px; }
+    .step b { display:block; margin-bottom:3px; }
+    .step span { display:block; color:var(--muted); line-height:1.35; font-size:13px; }
+
+    .filters {
+      position:sticky;
+      top:63px;
+      z-index:30;
+      display:flex;
+      gap:9px;
+      flex-wrap:wrap;
+      padding:12px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(17,12,24,.72);
+      backdrop-filter:blur(18px);
+      margin:24px 0 26px;
+    }
+    .filter {
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      color:#efe5f1;
+      border-radius:999px;
+      padding:10px 12px;
+      font-weight:850;
+      cursor:pointer;
+      transition:.2s ease;
+      font-size:14px;
+    }
+    .filter.active, .filter:hover {
+      background:rgba(255,142,188,.23);
+      border-color:rgba(255,142,188,.58);
+      color:white;
+    }
+
+    .venues {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+    .venue {
+      border-radius:28px;
+      padding:20px;
+      min-height:420px;
+      display:flex;
+      flex-direction:column;
+      border:1px solid rgba(255,255,255,.13);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(255,142,188,.13), transparent 13rem),
+        linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.038));
+      transition:transform .24s ease, border-color .24s ease, opacity .24s ease;
+    }
+    .venue.hide { display:none; }
+    .venue:hover { transform:translateY(-5px); border-color:rgba(255,255,255,.27); }
+    .venue-top {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .venue-top span {
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(140,235,214,.12);
+      border:1px solid rgba(140,235,214,.24);
+      color:#cdfbf2;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .pick {
+      width:42px; height:42px;
+      display:grid; place-items:center;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.08);
+      color:white;
+      cursor:pointer;
+      font-weight:950;
+      font-size:20px;
+      transition:.2s ease;
+    }
+    .pick.saved {
+      color:#210812;
+      border-color:transparent;
+      background:linear-gradient(135deg, var(--rose), var(--gold));
+    }
+    .venue h3 {
+      margin:0 0 10px;
+      font-size:26px;
+      letter-spacing:-.045em;
+      line-height:1.02;
+    }
+    .venue-meta {
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-bottom:14px;
+    }
+    .venue-meta span {
+      font-size:12px;
+      font-weight:850;
+      color:#f0e5f2;
+      padding:7px 9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.11);
+    }
+    .venue p {
+      margin:0 0 16px;
+      color:#ded0e4;
+      line-height:1.5;
+    }
+    .detail {
+      display:grid;
+      gap:4px;
+      padding:12px 0;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    .detail b { font-size:13px; color:#fff0b9; }
+    .detail span { color:var(--soft); line-height:1.42; font-size:14px; }
+    .venue-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:auto;
+      padding-top:16px;
+    }
+    .venue-actions button, .venue-actions a {
+      border:1px solid rgba(255,255,255,.15);
+      color:white;
+      background:rgba(255,255,255,.075);
+      border-radius:999px;
+      padding:10px 11px;
+      cursor:pointer;
+      font-weight:850;
+      font-size:13px;
+    }
+    .venue-actions button:hover, .venue-actions a:hover { background:rgba(255,255,255,.14); }
+
+    .shortlist {
+      position:sticky;
+      bottom:14px;
+      z-index:55;
+      margin:28px auto 0;
+      width:min(var(--max), calc(100% - 28px));
+      border-radius:24px;
+      padding:14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      background:rgba(17,12,24,.86);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 22px 52px rgba(0,0,0,.36);
+      backdrop-filter:blur(18px);
+    }
+    .shortlist strong { display:block; }
+    .shortlist small { color:var(--muted); }
+    .short-items {
+      max-width:54vw;
+      text-align:right;
+      color:#ffe2ed;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      font-size:14px;
+    }
+    .copy {
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border-radius:999px;
+      padding:9px 11px;
+      font-weight:850;
+      cursor:pointer;
+      margin-left:8px;
+    }
+
+    .split {
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+      align-items:stretch;
+    }
+    .panel {
+      border-radius:var(--radius);
+      padding:24px;
+      border:1px solid rgba(255,255,255,.13);
+      background:linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.04));
+    }
+    .panel h3 { margin:0 0 12px; font-size:28px; letter-spacing:-.04em; }
+    .panel p, .panel li { color:#ddd0e1; line-height:1.56; }
+    .panel ul { margin:12px 0 0; padding-left:20px; }
+    .questions { display:grid; gap:12px; }
+    .question {
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:12px;
+      padding:15px;
+      border-radius:21px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .num {
+      width:42px; height:42px;
+      display:grid; place-items:center;
+      border-radius:16px;
+      background:linear-gradient(135deg, var(--rose), var(--gold));
+      color:#230814;
+      font-weight:950;
+    }
+    .question b { display:block; margin-bottom:4px; }
+    .question span { color:var(--soft); line-height:1.45; display:block; }
+
+    .modal {
+      position:fixed;
+      inset:0;
+      z-index:100;
+      display:none;
+      place-items:center;
+      padding:20px;
+      background:rgba(6,4,9,.72);
+      backdrop-filter:blur(12px);
+    }
+    .modal.open { display:grid; }
+    .modal-card {
+      width:min(900px, 100%);
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.18);
+      background:#110c18;
+      box-shadow:0 35px 90px rgba(0,0,0,.55);
+    }
+    .modal-head {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:14px 16px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .modal-title { font-weight:950; letter-spacing:-.03em; }
+    .close {
+      width:40px; height:40px;
+      display:grid; place-items:center;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.07);
+      color:white;
+      cursor:pointer;
+      font-weight:950;
+    }
+    .mapframe { width:100%; height:520px; border:0; display:block; }
+
+    .footer {
+      padding:54px 0 76px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .footer strong { color:white; }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    @media (max-width: 1050px) {
+      .hero-grid, .split { grid-template-columns:1fr; }
+      .moodboard { min-height:560px; transform:none; }
+      .logic { grid-template-columns:1fr; }
+      .venues { grid-template-columns:1fr 1fr; }
+      .section-head { display:block; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width:min(100% - 22px, var(--max)); }
+      .nav-inner { width:min(100% - 18px, var(--max)); }
+      .links { display:none; }
+      .hero { min-height:auto; padding:48px 0 46px; }
+      h1 { font-size:52px; }
+      .hero p { font-size:17px; }
+      .moodboard { min-height:490px; border-radius:32px; }
+      .chip.b { display:none; }
+      section { padding:54px 0; }
+      .filters { top:62px; overflow-x:auto; flex-wrap:nowrap; border-radius:20px; }
+      .filter { white-space:nowrap; }
+      .venues { grid-template-columns:1fr; }
+      .shortlist { flex-direction:column; align-items:flex-start; bottom:10px; }
+      .short-items { max-width:100%; text-align:left; white-space:normal; }
+      .btn { width:100%; }
+      .mapframe { height:430px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      * { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-icon">♡</span>
+        <span>Unser Jahrestag</span>
+      </a>
+      <div class="links">
+        <a href="#routen">Routen</a>
+        <a href="#venues">Venues</a>
+        <a href="#entscheidung">Auswahl</a>
+        <a href="#maps">Maps</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="spark"></span> Berlin · Sommer · ein Jahr wir</span>
+        <h1><span class="gradient">Ein Wochenende nur für uns.</span></h1>
+        <p>
+          Ich habe ein paar schöne Möglichkeiten gesammelt: manche nah und entspannt, manche etwas eleganter,
+          manche eher draußen am Wasser, manche als richtiger Abend mit Dinner, Drinks und Blick über Berlin.
+          Wir müssen nichts davon perfekt durchplanen — wir suchen einfach zusammen aus, was sich nach uns anfühlt.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#routen">Routen ansehen</a>
+          <a class="btn" href="#venues">Venues auswählen</a>
+        </div>
+      </div>
+
+      <div class="moodboard glass">
+        <div class="mood-grid">
+          <div class="mood big"></div>
+          <div class="mood one"></div>
+          <div class="mood two"></div>
+        </div>
+        <div class="chip a">Dinner</div>
+        <div class="chip b">Rooftop</div>
+        <div class="chip c">Spree</div>
+        <div class="note">
+          <strong>Der Plan</strong>
+          <span>Eine kuratierte Auswahl statt fester Ablauf. Wir können gemeinsam entscheiden: mehr elegant, mehr ruhig, mehr Wasser oder mehr Berlin-Nacht.</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <h2>Die Logik dahinter</h2>
+            <p>Das Wochenende soll schön wirken, aber nicht verkrampft. Deshalb sind die Ideen in Stimmungen gedacht, nicht in Kategorien wie „teuer“ oder „einfach“.</p>
+          </div>
+        </div>
+        <div class="logic reveal">
+          <div class="logic-card">
+            <div class="big">Samstag</div>
+            <span>Lieber stark starten: Kunst, Dinner, Drinks. Wenn das Wetter kippt, bleibt der Abend trotzdem schön.</span>
+          </div>
+          <div class="logic-card">
+            <div class="big">Sonntag</div>
+            <span>Mehr Luft, Wasser, Spree und Musik. Weniger Druck, mehr gemeinsames Auswählen im Moment.</span>
+          </div>
+          <div class="logic-card">
+            <div class="big">Unser Stil</div>
+            <span>Nicht nur „irgendwo hingehen“, sondern Orte, die Atmosphäre haben: Licht, Blick, guter Raum, Wasser oder ein besonderer Eingang.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="routen">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <h2>Signature-Routen</h2>
+            <p>Fertige Vorschläge, die wir eins zu eins nehmen oder komplett remixen können.</p>
+          </div>
+        </div>
+        <div class="routes">
+          
+          <article class="route reveal">
+            <div class="route-image" style="background-image:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=82')">
+              <span class="route-no">01</span>
+            </div>
+            <div class="route-body">
+              <div class="tagline">nah · stark · rund</div>
+              <h3>A · East Side Glow</h3>
+              <p>Der sauberste Plan aus eurer Richtung: erst ein Wow-Erlebnis, dann Dinner, dann ein Blick über die Stadt.</p>
+              <div class="steps">
+                <div class="step">
+                  <time>17:00</time>
+                  <div><b>DARK MATTER</b><span>Licht, Sound, gemeinsame Eindrücke.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>19:30</time>
+                  <div><b>Michelberger</b><span>Dinner in Friedrichshain, nah und bewusst gewählt.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>21:30</time>
+                  <div><b>Loft14</b><span>Ein letzter Drink mit Skyline-Gefühl.</span></div>
+                </div>
+    </div>
+            </div>
+          </article>
+    
+          <article class="route reveal">
+            <div class="route-image" style="background-image:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=1400&q=82')">
+              <span class="route-no">02</span>
+            </div>
+            <div class="route-body">
+              <div class="tagline">elegant · romantisch</div>
+              <h3>B · Kunst, Apotheke, Bebelplatz</h3>
+              <p>Ein klassischer Jahrestagsabend mit Kunst, schönem Raum und Rooftop-Abschluss in Mitte.</p>
+              <div class="steps">
+                <div class="step">
+                  <time>16:30</time>
+                  <div><b>Fotografiska</b><span>Visueller Start, ruhig genug zum Ankommen.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>19:00</time>
+                  <div><b>ORA</b><span>Historisches Apotheken-Ambiente am Oranienplatz.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>21:30</time>
+                  <div><b>Hotel de Rome</b><span>Sundowner- oder Abenddrink über dem Bebelplatz.</span></div>
+                </div>
+    </div>
+            </div>
+          </article>
+    
+          <article class="route reveal">
+            <div class="route-image" style="background-image:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1400&q=82')">
+              <span class="route-no">03</span>
+            </div>
+            <div class="route-body">
+              <div class="tagline">dinner · drinks · nacht</div>
+              <h3>C · Glamour ohne Steifheit</h3>
+              <p>Für einen Abend, der etwas mehr nach Ausgehen klingt: versteckter Eingang, guter Raum, besonderer Abschluss.</p>
+              <div class="steps">
+                <div class="step">
+                  <time>18:30</time>
+                  <div><b>CRACKERS</b><span>Dinner mit Bar- und Clubgeschichte.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>21:00</time>
+                  <div><b>Bellboy oder Bar Tausend</b><span>Cocktail-Erlebnis statt normaler Absacker.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>später</time>
+                  <div><b>Spaziergang Mitte</b><span>Kurz raus, durchatmen, Nachtlicht.</span></div>
+                </div>
+    </div>
+            </div>
+          </article>
+    
+          <article class="route reveal">
+            <div class="route-image" style="background-image:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=82')">
+              <span class="route-no">04</span>
+            </div>
+            <div class="route-body">
+              <div class="tagline">leicht · draußen</div>
+              <h3>D · Wasser &amp; Sommerabend</h3>
+              <p>Für Sonntag: nicht überinszeniert, aber sehr persönlich. Wasser, Park, Musik und ein guter Abschluss.</p>
+              <div class="steps">
+                <div class="step">
+                  <time>13:00</time>
+                  <div><b>Ahoi oder Kanuliebe</b><span>Gemeinsam aufs Wasser oder an die Insel.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>15:30</time>
+                  <div><b>Treptower Park / Spree</b><span>Laufen, sitzen, Fotos, Gespräch.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>17:30</time>
+                  <div><b>Musikroute</b><span>Zwei ausgesuchte Bühnen und danach ein Drink.</span></div>
+                </div>
+    </div>
+            </div>
+          </article>
+    
+          <article class="route reveal">
+            <div class="route-image" style="background-image:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.08)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=82')">
+              <span class="route-no">05</span>
+            </div>
+            <div class="route-body">
+              <div class="tagline">ruhig · erwachsen</div>
+              <h3>E · Slow &amp; Schön</h3>
+              <p>Wenn ihr nicht viel Programm wollt: Wellness oder Spreefahrt, danach ein sehr bewusstes Dinner.</p>
+              <div class="steps">
+                <div class="step">
+                  <time>Nachmittag</time>
+                  <div><b>vabali oder Spreefahrt</b><span>Runterkommen statt hetzen.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>Abend</time>
+                  <div><b>LOVIS oder Katz Orange</b><span>Schöner Raum, ruhiger Abend.</span></div>
+                </div>
+    
+                <div class="step">
+                  <time>später</time>
+                  <div><b>Becketts Kopf</b><span>Leiser, intimer Abschluss.</span></div>
+                </div>
+    </div>
+            </div>
+          </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section id="venues">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <h2>Venues & Bausteine</h2>
+            <p>Hier können wir markieren, was uns gefällt. Die Auswahl bleibt auf diesem Gerät gespeichert.</p>
+          </div>
+        </div>
+
+        <div class="filters reveal" aria-label="Filter">
+          <button class="filter active" data-filter="all">Alles</button>
+          <button class="filter" data-filter="signature">Signature</button>
+          <button class="filter" data-filter="dinner">Dinner</button>
+          <button class="filter" data-filter="rooftop">Rooftop</button>
+          <button class="filter" data-filter="drinks">Drinks</button>
+          <button class="filter" data-filter="kunst">Kunst & Wow</button>
+          <button class="filter" data-filter="wasser">Wasser & Spree</button>
+          <button class="filter" data-filter="romantic">ruhig-romantisch</button>
+          <button class="filter" data-filter="wetter">wetter-sicher</button>
+          <button class="filter" data-filter="nah">nahe Wege</button>
+        </div>
+
+        <div class="venues">
+          
+          <article class="venue reveal" data-tags="signature kunst wow wetter nah" data-title="DARK MATTER" data-map="https://www.google.com/maps?q=DARK+MATTER+Berlin+K%C3%B6penicker+Chaussee+46&amp;output=embed">
+            <div class="venue-top">
+              <span>Kunst &amp; Wow</span>
+              <button class="pick" aria-label="DARK MATTER merken">♡</button>
+            </div>
+            <h3>DARK MATTER</h3>
+            <div class="venue-meta">
+              <span>Rummelsburg</span>
+              <span>immersiv, dunkel, hypnotisch</span>
+            </div>
+            <p>Ein starker Auftakt, weil es sich sofort nach Erlebnis anfühlt: Licht, Sound und Räume, die man gemeinsam entdeckt, ohne dass es museal oder trocken wird.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Samstag später Nachmittag oder früher Abend, besonders wenn es draußen zu heiß oder unbeständig ist.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Michelberger oder Loft14.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=DARK+MATTER+Berlin+K%C3%B6penicker+Chaussee+46" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.darkmatter.berlin/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="signature kunst wow wetter elegant" data-title="Fotografiska Berlin" data-map="https://www.google.com/maps?q=Fotografiska+Berlin+Oranienburger+Stra%C3%9Fe+54&amp;output=embed">
+            <div class="venue-top">
+              <span>Kunst &amp; Stil</span>
+              <button class="pick" aria-label="Fotografiska Berlin merken">♡</button>
+            </div>
+            <h3>Fotografiska Berlin</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>visuell, urban, erwachsen</span>
+            </div>
+            <p>Gut, wenn der Tag ruhiger starten soll: wechselnde Ausstellungen, schönes Gebäude, später Übergang zu Dinner oder Drinks in Mitte.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Als Nachmittagsbaustein vor einem schickeren Abend.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach ORA, Night Kitchen, Frederick’s oder Hotel de Rome.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Fotografiska+Berlin+Oranienburger+Stra%C3%9Fe+54" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://berlin.fotografiska.com/en" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner nah relaxed signature" data-title="Michelberger Restaurant" data-map="https://www.google.com/maps?q=Michelberger+Restaurant+Berlin+Warschauer+Stra%C3%9Fe+39&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner</span>
+              <button class="pick" aria-label="Michelberger Restaurant merken">♡</button>
+            </div>
+            <h3>Michelberger Restaurant</h3>
+            <div class="venue-meta">
+              <span>Friedrichshain</span>
+              <span>entspannt, hochwertig, nah</span>
+            </div>
+            <p>Die naheliegendste schöne Dinner-Option: nicht steif, nicht beliebig, sehr gut kombinierbar mit allem rund um Spree, Warschauer Straße und Ostkreuz.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn der Abend besonders, aber trotzdem natürlich wirken soll.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher DARK MATTER oder Spreewalk, danach Loft14.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Michelberger+Restaurant+Berlin+Warschauer+Stra%C3%9Fe+39" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.michelbergerhotel.com/en/food-and-drink/dinner/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner elegant romantic signature" data-title="ORA" data-map="https://www.google.com/maps?q=ORA+Berlin+Oranienplatz+14&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner &amp; Wein</span>
+              <button class="pick" aria-label="ORA merken">♡</button>
+            </div>
+            <h3>ORA</h3>
+            <div class="venue-meta">
+              <span>Kreuzberg</span>
+              <span>historisch, warm, charmant</span>
+            </div>
+            <p>Ehemalige Apotheke am Oranienplatz: einer der Orte, die schon beim Reingehen nach besonderem Abend aussehen.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn Dinner der romantische Mittelpunkt des Abends sein soll.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Fotografiska, danach Hotel de Rome oder Velvet.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=ORA+Berlin+Oranienplatz+14" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://ora.berlin/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner drinks elegant signature" data-title="KINK Bar &amp; Restaurant" data-map="https://www.google.com/maps?q=KINK+Bar+Restaurant+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner &amp; Drinks</span>
+              <button class="pick" aria-label="KINK Bar &amp; Restaurant merken">♡</button>
+            </div>
+            <h3>KINK Bar &amp; Restaurant</h3>
+            <div class="venue-meta">
+              <span>Prenzlauer Berg</span>
+              <span>designig, lebendig, sinnlich</span>
+            </div>
+            <p>Restaurant, Bar und Garten in einem. Ideal, wenn ihr nicht nach dem Essen wieder komplett neu planen wollt.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Für einen Abend, der elegant, aber nicht förmlich sein soll.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Spaziergang Kollwitzkiez, danach Becketts Kopf.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=KINK+Bar+Restaurant+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://kink-berlin.de/en" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner drinks elegant signature" data-title="CRACKERS" data-map="https://www.google.com/maps?q=CRACKERS+Berlin+Friedrichstra%C3%9Fe+158&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner &amp; Bar</span>
+              <button class="pick" aria-label="CRACKERS merken">♡</button>
+            </div>
+            <h3>CRACKERS</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>glamourös, versteckt, energetisch</span>
+            </div>
+            <p>Mehr Erlebnis als klassisches Restaurant: versteckter Eingang, Bar, Design und Dinner in einem ehemaligen Club-Kontext.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr Lust auf einen Abend habt, der mehr nach Ausgehen als nach Restaurantbesuch klingt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Bellboy oder Bar Tausend.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=CRACKERS+Berlin+Friedrichstra%C3%9Fe+158" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://crackersberlin.com/de/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner romantic elegant" data-title="Katz Orange" data-map="https://www.google.com/maps?q=Katz+Orange+Berlin+Bergstra%C3%9Fe+22&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner</span>
+              <button class="pick" aria-label="Katz Orange merken">♡</button>
+            </div>
+            <h3>Katz Orange</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>warm, detailverliebt, sharing</span>
+            </div>
+            <p>Ein sehr schöner Ort für gemeinsames Essen: Hofgefühl, warme Räume, Wein, Sharing und eine Atmosphäre, die nicht laut nach Luxus schreit.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr es romantisch, aber nicht inszeniert wollt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Rosenthaler Platz / Mitte, danach Becketts Kopf oder AMANO.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Katz+Orange+Berlin+Bergstra%C3%9Fe+22" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://katzorange.com/en/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner elegant romantic" data-title="LOVIS" data-map="https://www.google.com/maps?q=LOVIS+Restaurant+Berlin+Kantstra%C3%9Fe+79&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner</span>
+              <button class="pick" aria-label="LOVIS merken">♡</button>
+            </div>
+            <h3>LOVIS</h3>
+            <div class="venue-meta">
+              <span>Charlottenburg</span>
+              <span>versteckt, ruhig, besonders</span>
+            </div>
+            <p>Ein versteckter Ort mit Gartengefühl und Contemporary German Cuisine. Weiter weg, aber sehr passend, wenn ihr bewusst einen anderen Kiez ansteuern wollt.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Für einen ruhigeren, sehr erwachsenen Jahrestagsabend.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Monkey Bar oder ein Spaziergang Richtung Savignyplatz.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=LOVIS+Restaurant+Berlin+Kantstra%C3%9Fe+79" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://lovisrestaurant.com/en/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="dinner drinks elegant" data-title="Frederick’s" data-map="https://www.google.com/maps?q=Frederick%27s+Berlin+Potsdamer+Platz&amp;output=embed">
+            <div class="venue-top">
+              <span>Dinner &amp; Bar</span>
+              <button class="pick" aria-label="Frederick’s merken">♡</button>
+            </div>
+            <h3>Frederick’s</h3>
+            <div class="venue-meta">
+              <span>Potsdamer Platz</span>
+              <span>Art Deco, lebendig, schick</span>
+            </div>
+            <p>Sehr gutes Zwischending aus Restaurant und Ausgeh-Ort: prachtvoller Raum, Bar, Cocktails, Musik und genug Energie für einen Jahrestag.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr euch etwas schicker machen wollt, ohne in ein stilles Fine-Dining-Setting zu gehen.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Fotografiska oder Spree, danach Bellboy.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Frederick%27s+Berlin+Potsdamer+Platz" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.fredericksberlin.com/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="rooftop drinks elegant romantic signature" data-title="Hotel de Rome Rooftop" data-map="https://www.google.com/maps?q=Hotel+de+Rome+Rooftop+Terrace+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Rooftop</span>
+              <button class="pick" aria-label="Hotel de Rome Rooftop merken">♡</button>
+            </div>
+            <h3>Hotel de Rome Rooftop</h3>
+            <div class="venue-meta">
+              <span>Bebelplatz</span>
+              <span>klassisch, edel, panoramisch</span>
+            </div>
+            <p>Der eleganteste Rooftop-Vorschlag: Blick auf den historischen Bebelplatz, schöne Abendstimmung, deutlich mehr Jahrestag als Standard-Bar.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Als Abschluss bei gutem Wetter.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach ORA, Fotografiska, Frederick’s oder einem Mitte-Spaziergang.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hotel+de+Rome+Rooftop+Terrace+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.hotelderomeberlin.com/en/dining.html" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="rooftop drinks elegant" data-title="AMANO Rooftop" data-map="https://www.google.com/maps?q=AMANO+Rooftop+Bar+Berlin+Rosenthaler+Stra%C3%9Fe+63&amp;output=embed">
+            <div class="venue-top">
+              <span>Rooftop</span>
+              <button class="pick" aria-label="AMANO Rooftop merken">♡</button>
+            </div>
+            <h3>AMANO Rooftop</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>sommerlich, hell, urban</span>
+            </div>
+            <p>Ein guter Sundowner-Spot in Mitte: unkomplizierter als Hotel de Rome, aber trotzdem mit Aussicht und Abendgefühl.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr nach Kunst oder Dinner noch einen luftigen Abschluss wollt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach Fotografiska, Katz Orange oder Night Kitchen.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=AMANO+Rooftop+Bar+Berlin+Rosenthaler+Stra%C3%9Fe+63" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.amanogroup.com/en/bars/amano-rooftop-bar-berlin-mitte" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="rooftop drinks elegant" data-title="GRACE Rooftop" data-map="https://www.google.com/maps?q=GRACE+Rooftop+Berlin+Kurf%C3%BCrstendamm+25&amp;output=embed">
+            <div class="venue-top">
+              <span>Rooftop &amp; Bar</span>
+              <button class="pick" aria-label="GRACE Rooftop merken">♡</button>
+            </div>
+            <h3>GRACE Rooftop</h3>
+            <div class="venue-meta">
+              <span>Kurfürstendamm</span>
+              <span>westlich, dressy, nightlife</span>
+            </div>
+            <p>Schicker West-Berlin-Kontrast: Rooftop, Bar und Restaurant in einem eleganteren Umfeld.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr bewusst raus aus dem Friedrichshain/Kreuzberg-Kosmos wollt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach LOVIS oder Monkey Bar.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=GRACE+Rooftop+Berlin+Kurf%C3%BCrstendamm+25" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.grace-berlin.com/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="rooftop drinks nah signature" data-title="Loft14" data-map="https://www.google.com/maps?q=Loft14+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Rooftop</span>
+              <button class="pick" aria-label="Loft14 merken">♡</button>
+            </div>
+            <h3>Loft14</h3>
+            <div class="venue-meta">
+              <span>Friedrichshain-nah</span>
+              <span>Skyline, unkompliziert, nah</span>
+            </div>
+            <p>Sehr praktische Rooftop-Option aus eurer Richtung: gut für einen Drink mit Blick, ohne den ganzen Abend in den Westen zu verschieben.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Nach Dinner im Osten oder als später Abschluss.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach Michelberger oder DARK MATTER.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Loft14+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://loft14.berlin/en/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="rooftop drinks elegant" data-title="Monkey Bar" data-map="https://www.google.com/maps?q=Monkey+Bar+Berlin+Bikini&amp;output=embed">
+            <div class="venue-top">
+              <span>Rooftop &amp; Bar</span>
+              <button class="pick" aria-label="Monkey Bar merken">♡</button>
+            </div>
+            <h3>Monkey Bar</h3>
+            <div class="venue-meta">
+              <span>Bikini Berlin</span>
+              <span>ikonisch, lebendig, Blick über den Zoo</span>
+            </div>
+            <p>Sehr bekannte Aussicht und ein klarer Berlin-Moment. Nicht der intimste Ort, aber stark, wenn ihr Lust auf City-West und große Kulisse habt.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Als Abschluss nach einem westlicheren Dinner.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach LOVIS oder einem Abend rund um Savignyplatz.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Monkey+Bar+Berlin+Bikini" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://25hours-hotels.com/berlin/bikini-berlin/restaurants-and-bars/monkey-bar/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="drinks romantic elegant" data-title="Velvet Bar" data-map="https://www.google.com/maps?q=Velvet+Bar+Berlin+Ganghoferstra%C3%9Fe+1&amp;output=embed">
+            <div class="venue-top">
+              <span>Cocktails</span>
+              <button class="pick" aria-label="Velvet Bar merken">♡</button>
+            </div>
+            <h3>Velvet Bar</h3>
+            <div class="venue-meta">
+              <span>Neukölln</span>
+              <span>intim, saisonal, präzise</span>
+            </div>
+            <p>Eine der schönsten Cocktail-Ideen, wenn der Abend intimer enden soll: klein, besonders, mit wechselndem Menü und weniger Rooftop-Trubel.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Nach ORA, Barra oder Klunkerkranich.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Sehr gut als ruhiger Abschluss nach einem vollen Tag.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Velvet+Bar+Berlin+Ganghoferstra%C3%9Fe+1" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://velvet-bar-berlin.de/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="drinks elegant wow" data-title="Bellboy Berlin" data-map="https://www.google.com/maps?q=Bellboy+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Cocktails</span>
+              <button class="pick" aria-label="Bellboy Berlin merken">♡</button>
+            </div>
+            <h3>Bellboy Berlin</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>theatralisch, opulent, verspielt</span>
+            </div>
+            <p>Für einen Drink, der selbst ein Erlebnis ist: mehr Inszenierung, mehr Eleganz, mehr Abend-Gefühl.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr Lust auf schick, dunkel und ein bisschen extravagant habt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach CRACKERS, Frederick’s oder Fotografiska.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bellboy+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.bellboyberlin.com/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="drinks romantic elegant" data-title="Becketts Kopf" data-map="https://www.google.com/maps?q=Becketts+Kopf+Berlin+Pappelallee+64&amp;output=embed">
+            <div class="venue-top">
+              <span>Cocktails</span>
+              <button class="pick" aria-label="Becketts Kopf merken">♡</button>
+            </div>
+            <h3>Becketts Kopf</h3>
+            <div class="venue-meta">
+              <span>Prenzlauer Berg</span>
+              <span>dunkel, leise, klassisch</span>
+            </div>
+            <p>Wenn ihr keinen lauten Abschluss wollt, sondern eine ernsthafte, intime Cocktailbar mit viel Atmosphäre.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Nach KINK oder einem Prenzlauer-Berg-Abend.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>KINK plus Becketts Kopf ist eine sehr runde Route.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Becketts+Kopf+Berlin+Pappelallee+64" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://becketts-kopf.de/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="drinks wow elegant" data-title="Bar Tausend" data-map="https://www.google.com/maps?q=Bar+Tausend+Berlin+Schiffbauerdamm+11&amp;output=embed">
+            <div class="venue-top">
+              <span>Cocktails &amp; Musik</span>
+              <button class="pick" aria-label="Bar Tausend merken">♡</button>
+            </div>
+            <h3>Bar Tausend</h3>
+            <div class="venue-meta">
+              <span>Mitte</span>
+              <span>versteckt, filmisch, nächtlich</span>
+            </div>
+            <p>Mehr Geheimtür- und Nachtgefühl: unter den S-Bahn-Bögen, dunkler, musikalischer, weniger klassisch romantisch.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn der Abend nach Dinner noch Energie haben soll.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Nach CRACKERS oder Frederick’s.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bar+Tausend+Berlin+Schiffbauerdamm+11" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://tausendberlin.com/en/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="wasser nah relaxed romantic" data-title="Ahoi Ostkreuz" data-map="https://www.google.com/maps?q=Ahoi+Ostkreuz+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Wasser</span>
+              <button class="pick" aria-label="Ahoi Ostkreuz merken">♡</button>
+            </div>
+            <h3>Ahoi Ostkreuz</h3>
+            <div class="venue-meta">
+              <span>Rummelsburger Bucht</span>
+              <span>Sommer, Spree, leicht</span>
+            </div>
+            <p>Sehr nah und trotzdem nicht alltäglich: gemeinsam aufs Wasser, danach Spaziergang oder Dinner. Schön, wenn der Sonntag aktiver werden soll.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Sonntag nicht in der Mittagshitze, eher vormittags oder später am Nachmittag.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Treptower Park, Insel der Jugend oder Michelberger.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Ahoi+Ostkreuz+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://ahoi-ostkreuz.de/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="wasser romantic relaxed" data-title="Kanuliebe / Insel der Jugend" data-map="https://www.google.com/maps?q=Kanuliebe+Insel+der+Jugend+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Wasser &amp; Park</span>
+              <button class="pick" aria-label="Kanuliebe / Insel der Jugend merken">♡</button>
+            </div>
+            <h3>Kanuliebe / Insel der Jugend</h3>
+            <div class="venue-meta">
+              <span>Treptow</span>
+              <span>grün, ruhig, sommerlich</span>
+            </div>
+            <p>Romantischer als reines Bootsleihen, weil Insel, Wasser und Park zusammenkommen.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Als weicher Sonntagsplan mit viel Raum für Gespräche.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Treptower Park, Spreewalk oder ein später Drink.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kanuliebe+Insel+der+Jugend+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.kanuliebe.com/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="wasser romantic relaxed signature" data-title="BWSG East-Side-Tour" data-map="https://www.google.com/maps?q=BWSG+East+Side+Tour+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Spreefahrt</span>
+              <button class="pick" aria-label="BWSG East-Side-Tour merken">♡</button>
+            </div>
+            <h3>BWSG East-Side-Tour</h3>
+            <div class="venue-meta">
+              <span>Spree</span>
+              <span>entspannt, panoramisch, Berlin vom Wasser</span>
+            </div>
+            <p>Die komfortablere Wasser-Variante: sitzen, schauen, Berlin vorbeiziehen lassen. Besonders gut, wenn Paddeln zu aktiv wirkt.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Als ruhiger Tagesbaustein vor Dinner.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach Fotografiska, Frederick’s oder Hotel de Rome.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=BWSG+East+Side+Tour+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://bwsg-berlin.de/en/schedule-tickets/east-side-tour-2/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="relaxed romantic wetter" data-title="vabali spa Berlin" data-map="https://www.google.com/maps?q=vabali+spa+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Wellness</span>
+              <button class="pick" aria-label="vabali spa Berlin merken">♡</button>
+            </div>
+            <h3>vabali spa Berlin</h3>
+            <div class="venue-meta">
+              <span>Moabit</span>
+              <span>ruhig, warm, abschalten</span>
+            </div>
+            <p>Ein kompletter Reset mitten in der Stadt: Pools, Saunen, Ruhe, Massage-Optionen und Restaurant in einer balinesischen Umgebung.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Wenn ihr den Jahrestag nicht vollpacken wollt, sondern wirklich runterkommen möchtet.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Danach ein sehr entspanntes Dinner, nicht zu viel Programm.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=vabali+spa+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.vabali.de/berlin/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="relaxed romantic nah" data-title="Freiluftkino Friedrichshain" data-map="https://www.google.com/maps?q=Freiluftkino+Friedrichshain+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Kino</span>
+              <button class="pick" aria-label="Freiluftkino Friedrichshain merken">♡</button>
+            </div>
+            <h3>Freiluftkino Friedrichshain</h3>
+            <div class="venue-meta">
+              <span>Volkspark Friedrichshain</span>
+              <span>Sommernacht, Decke, Film</span>
+            </div>
+            <p>Ein einfacher, aber schöner Abschluss, wenn ihr nicht noch eine Bar braucht: draußen sitzen, Film schauen, danach nach Hause spazieren.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Nur wenn das Wetter wirklich hält.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Dinner im Osten oder ein Spaziergang durch den Park.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Freiluftkino+Friedrichshain+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.berlin.de/kino/freiluftkinos/2464997-2464577-freiluftkino-friedrichshain.html" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+          <article class="venue reveal" data-tags="musik relaxed romantic nah" data-title="Fête de la Musique" data-map="https://www.google.com/maps?q=F%C3%AAte+de+la+Musique+Berlin&amp;output=embed">
+            <div class="venue-top">
+              <span>Musikroute</span>
+              <button class="pick" aria-label="Fête de la Musique merken">♡</button>
+            </div>
+            <h3>Fête de la Musique</h3>
+            <div class="venue-meta">
+              <span>stadtweit</span>
+              <span>kuratiert, sommerlich, lebendig</span>
+            </div>
+            <p>Nicht als planloses Herumlaufen, sondern als kleine Musikroute: zwei handverlesene Bühnen, ein Spaziergang dazwischen, danach ein Drink.</p>
+            <div class="detail">
+              <b>Passt am besten:</b>
+              <span>Sonntag ab spätem Nachmittag, wenn der Tag langsam abkühlt.</span>
+            </div>
+            <div class="detail">
+              <b>Schöne Kombination:</b>
+              <span>Vorher Wasser oder Picknick, danach Velvet oder Klunkerkranich.</span>
+            </div>
+            <div class="venue-actions">
+              <button class="mapBtn">Maps Card</button>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=F%C3%AAte+de+la+Musique+Berlin" target="_blank" rel="noreferrer">Route öffnen ↗</a>
+              <a href="https://www.fetedelamusique.de/" target="_blank" rel="noreferrer">Venue-Seite ↗</a>
+            </div>
+          </article>
+    
+        </div>
+
+        <div class="shortlist">
+          <div>
+            <strong id="shortCount">Noch nichts ausgewählt</strong>
+            <small>Am Ende reichen 3–4 Favoriten: ein Start, ein Dinner, ein Abschluss, optional ein Sonntagsbaustein.</small>
+          </div>
+          <div>
+            <span class="short-items" id="shortItems">Tipp: erst alles markieren, was sich gut anfühlt.</span>
+            <button class="copy" id="copyBtn">kopieren</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="entscheidung">
+      <div class="wrap split">
+        <div class="panel reveal">
+          <h2 style="font-size:clamp(36px,4.6vw,58px)">So wählen wir aus</h2>
+          <p>
+            Wir müssen nicht objektiv den „besten“ Plan finden. Es reicht, wenn wir die Stimmung wählen,
+            die zu unserem Jahrestag passt.
+          </p>
+          <ul>
+            <li><strong>Mehr Wow?</strong> DARK MATTER, Fotografiska, Bellboy oder CRACKERS.</li>
+            <li><strong>Mehr romantisch?</strong> ORA, Hotel de Rome, Katz Orange, Becketts Kopf.</li>
+            <li><strong>Mehr draußen?</strong> Ahoi, Kanuliebe, Spreefahrt, Musikroute.</li>
+            <li><strong>Mehr ruhig?</strong> vabali, LOVIS, Spaziergang, leise Bar.</li>
+          </ul>
+        </div>
+
+        <div class="questions reveal">
+          <div class="question">
+            <div class="num">1</div>
+            <div><b>Wollen wir uns schicker machen?</b><span>Dann eher ORA, CRACKERS, Frederick’s, Hotel de Rome, Bellboy.</span></div>
+          </div>
+          <div class="question">
+            <div class="num">2</div>
+            <div><b>Wollen wir viel reden und wenig hetzen?</b><span>Dann Wasser, Spaziergang, Katz Orange, Becketts Kopf oder vabali.</span></div>
+          </div>
+          <div class="question">
+            <div class="num">3</div>
+            <div><b>Wollen wir nah bleiben?</b><span>Dann DARK MATTER, Michelberger, Loft14, Ahoi Ostkreuz und Freiluftkino.</span></div>
+          </div>
+          <div class="question">
+            <div class="num">4</div>
+            <div><b>Wollen wir Berlin-Nacht?</b><span>Dann CRACKERS plus Bar Tausend oder Bellboy, oder KINK plus Becketts Kopf.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="maps">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <h2>Maps & Originalseiten</h2>
+            <p>Bei jeder Karte oben kannst du „Maps Card“, „Route öffnen“ oder „Venue-Seite“ anklicken. Die großen Bilder sind Stimmungsbilder; die Karten und Links führen zu echten Locations.</p>
+          </div>
+        </div>
+        <div class="logic reveal">
+          <div class="logic-card">
+            <div class="big">Maps Card</div>
+            <span>Öffnet eine eingebettete Karte zur Location, ohne dass die Seite überladen wirkt.</span>
+          </div>
+          <div class="logic-card">
+            <div class="big">Route öffnen</div>
+            <span>Öffnet Google Maps direkt zur Location; der Startpunkt kommt dann vom jeweiligen Gerät.</span>
+          </div>
+          <div class="logic-card">
+            <div class="big">Venue-Seite</div>
+            <span>Für Reservierung, Öffnungszeiten, Programm oder aktuelle Hinweise.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>Stand:</strong> Juni 2026. Details vor dem finalen Entscheiden nochmal auf den Originalseiten prüfen.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="mapModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Maps Card</div>
+        <button class="close" id="closeModal" aria-label="Karte schließen">×</button>
+      </div>
+      <iframe class="mapframe" id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const venues = document.querySelectorAll('.venue');
+    const picks = document.querySelectorAll('.pick');
+    const shortCount = document.getElementById('shortCount');
+    const shortItems = document.getElementById('shortItems');
+    const copyBtn = document.getElementById('copyBtn');
+    const storageKey = 'anniversarySelectionsBerlinV2';
+
+    let selected = JSON.parse(localStorage.getItem(storageKey) || '[]');
+
+    function syncSelection() {
+      picks.forEach(btn => {
+        const card = btn.closest('.venue');
+        const title = card.dataset.title;
+        const isSaved = selected.includes(title);
+        btn.classList.toggle('saved', isSaved);
+        btn.textContent = isSaved ? '♥' : '♡';
+      });
+
+      if(selected.length === 0) {
+        shortCount.textContent = 'Noch nichts ausgewählt';
+        shortItems.textContent = 'Tipp: erst alles markieren, was sich gut anfühlt.';
+      } else {
+        shortCount.textContent = selected.length === 1 ? '1 Favorit ausgewählt' : `${selected.length} Favoriten ausgewählt`;
+        shortItems.textContent = selected.join(' · ');
+      }
+      localStorage.setItem(storageKey, JSON.stringify(selected));
+    }
+
+    picks.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.closest('.venue').dataset.title;
+        selected = selected.includes(title)
+          ? selected.filter(item => item !== title)
+          : [...selected, title];
+        syncSelection();
+      });
+    });
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        filters.forEach(item => item.classList.remove('active'));
+        filter.classList.add('active');
+        const mode = filter.dataset.filter;
+        venues.forEach(card => {
+          const tags = card.dataset.tags.split(' ');
+          card.classList.toggle('hide', !(mode === 'all' || tags.includes(mode)));
+        });
+      });
+    });
+
+    copyBtn.addEventListener('click', async () => {
+      const text = selected.length ? selected.join('\n') : 'Noch keine Favoriten ausgewählt.';
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.textContent = 'kopiert';
+        setTimeout(() => copyBtn.textContent = 'kopieren', 1400);
+      } catch(e) {
+        copyBtn.textContent = 'markieren';
+        setTimeout(() => copyBtn.textContent = 'kopieren', 1400);
+      }
+    });
+
+    const modal = document.getElementById('mapModal');
+    const mapFrame = document.getElementById('mapFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.mapBtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.venue');
+        modalTitle.textContent = card.dataset.title;
+        mapFrame.src = card.dataset.map;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function hideModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      mapFrame.src = '';
+    }
+    closeModal.addEventListener('click', hideModal);
+    modal.addEventListener('click', event => {
+      if(event.target === modal) hideModal();
+    });
+    document.addEventListener('keydown', event => {
+      if(event.key === 'Escape') hideModal();
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold:.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    syncSelection();
+  </script>
+</body>
+</html>
